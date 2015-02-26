@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project name="Hello World" default="build" basedir=".">
+	<description>Сборка пакета.</description>
+	<property name="debug" value="true" overwrite="false" />
+	<property name="main.dir" value="${directory::get-current-directory()}"/>
+	<property name="publish.dir" value="${main.dir}\publish"/>
+	<property name="out.dir" value="${publish.dir}\outdir"/>
+	<property name="SolutionFile" value="${main.dir}\strazi.sln"/>    
+	<property name="MSBuildPath" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"/>    
+	<property name="build.configuration" value="Release"/>
+	<property name="tools" value="${main.dir}\Tools"/>
+	<property name="svnLocation" value="C:\Program Files\TortoiseSVN\bin\svn.exe"/>
+	
+	<target name="updateSvn" description="Update">
+	   <echo message="Обновляем исходники из репозитория" />
+	   <exec program="${svnLocation}" commandline="update ${main.dir}"/>
+	</target>
+		
+	<target name="cleanupPublish">
+		<delete dir="${publish.dir}" />
+	</target>
+
+	<target name="buildSolution"  depends="cleanupPublish">
+        <exec program="${MSBuildPath}">
+        	<arg line="${SolutionFile}"/>
+			<arg line="/t:Rebuild;Publish"/>
+			<arg line="/p:Configuration=${build.configuration};DeployOnBuild=True;PackageAsSingleFile=False;outdir=${out.dir}\"/>
+			<arg line="/verbosity:quiet"/>
+			<arg line="/nologo"/>
+		</exec>
+	</target>
+	
+	<target name="build" depends="buildSolution">
+		<copy todir="${publish.dir}\starzi">
+			<fileset basedir="${out.dir}\_PublishedWebsites\strazi"/>
+		</copy>
+	</target>
+</project>

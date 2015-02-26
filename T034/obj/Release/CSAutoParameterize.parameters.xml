@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DatabaseFile-Web.config Connection String" description="DatabaseFile Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultvalue="db/t034.sqlite" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DatabaseFile']/@connectionString" />
+  </parameter>
+</parameters>
