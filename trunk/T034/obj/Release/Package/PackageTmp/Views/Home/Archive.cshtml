@@ -1,0 +1,202 @@
+﻿@model List<Db.Entity.Vgiik.Person>
+
+@{
+    ViewBag.Title = "Архив ВГИИК";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h5 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Архивные документы Волгоградского государственного института искусств и культуры
+        </a>
+      </h5>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+            <div class="list-group">
+                @foreach (var person in Model)
+                {
+                    @Html.ActionLink(person.FullName, "Person", "Archive", new { personId = person.Id }, new { @class = "list-group-item" })    
+                }
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+        <h5 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Исторические фотодокументы Волгоградского государственного института искусств и культуры
+        </a>
+      </h5>        
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+          <div class="row">
+             <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/1.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/1.jpg" alt="">
+                  </a>
+                  Фотодокументы Волгоградского училища культуры
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/2.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/2.jpg" alt="">
+                  </a>
+                  Семья Переходник-Оля внучка, Переходник Б.Г. дедушка, Переходник А.Н. бабушка 1985
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/3.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/3.jpg" alt="">
+                  </a>
+                  Переходник Б.Г. сельхоз.техн-м Ставропольского края 1944-47 г.
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/4.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/4.jpg" alt="">
+                  </a>
+                  Переходник Б.Г. на встрече с ветеранами в музее ИЗО г. Волгоград, 1975
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/5.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/5.jpg" alt="">
+                  </a>
+                  Краснодарский край, август 1967 станция жд Советская супруги Переходник Б.Г. и А.Н.
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/6.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/6.jpg" alt="">
+                  </a>
+                  Главный редактор журнала КПР Лютер Анатолий Иванович
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/7.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/7.jpg" alt="">
+                  </a>
+                  1-й ряд 1- слева - Черкасов Николай Денисович-литератор.  2-й ряд 1-й справа-Кобликов Владимир Герасимович-дирижёр, музыкант, 4-я слева-Кондрашова Клавдия Петровна, 5-й слева-Переходник Б.Г.
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/8.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/8.jpg" alt="">
+                  </a>
+                  1957 г. супруги Пререходник Борис Григорьевич, Анна Николаевна
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/9.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/9.jpg" alt="">
+                  </a>
+                  19.03.1954. Москва. МГБИ. слева направо Переходник Б.Г., сын Андрей, Переходник Анна Николаевна - жена
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/photo/archive/10.jpg" class="thumbnail">
+                      <img src="/Content/images/photo/archive/10.jpg" alt="">
+                  </a>
+                  Переходник Б.Г. на встрече с ветеранами в музее ИЗО г. Волгоград, 1975.
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/kpk/1970. ККП в кабинете.jpg" class="thumbnail">
+                      <img src="/Content/images/people/kpk/1970. ККП в кабинете.jpg" alt="">
+                  </a>
+                  Кондрашова Клавдия Петровна в кабинете. 1970 г.
+              </div>
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/kpk/архив Кондрашовой К.П.16.jpg" class="thumbnail">
+                      <img src="/Content/images/people/kpk/архив Кондрашовой К.П.16.jpg" alt="">
+                  </a>
+                  В день вручения грамоты "Заслуженный работник культуры РСФСР" Кондрашовой К. П.
+              </div>
+
+          </div>
+          <div class="row">
+              <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/kpk/архив Кондрашовой К.П.16_1.jpg" class="thumbnail">
+                      <img src="/Content/images/people/kpk/архив Кондрашовой К.П.16_1.jpg" alt="">
+                  </a>
+                  Вручение грамоты "Заслуженный работник культуры РСФСР" Кондрашовой К.П. заместителем председателя по культуре Областного Совета Народных депутатов Усковым Виталием Степановичем 1973 г.
+              </div>
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/1.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/1.jpg" alt="">
+                  </a>
+                  Руководитель ОППТ ВГИИК Тинина З.П. 2014 г.
+              </div>
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/2.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/2.jpg" alt="">
+                  </a>
+                  04.12.2014 занятия по всеобщей истории. Ведёт проф. З.П. Тинина
+              </div>
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/3.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/3.jpg" alt="">
+                  </a>
+                  04.12.2014 занятия по всеобщей истории. Ведёт проф. З.П. Тинина
+              </div>
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/4.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/4.jpg" alt="">
+                  </a>
+                  04.12.2014 занятия по всеобщей истории. Ведёт проф. З.П. Тинина
+              </div>
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/5.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/5.jpg" alt="">
+                  </a>
+                  04.12.2014 занятия по религиоведению. Ведёт проф. З.П. Тинина
+              </div>
+        </div>
+		  <div class="row">
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/6.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/6.jpg" alt="">
+                  </a>
+                  04.12.2014 занятия по религиоведению. Ведёт проф. З.П. Тинина
+              </div>
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/7.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/7.jpg" alt="">
+                  </a>
+                  04.12.2014 занятия по религиоведению. Ведёт проф. З.П. Тинина
+              </div>
+			  <div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/tinina/8.jpg" class="thumbnail">
+                      <img src="/Content/images/people/tinina/8.jpg" alt="">
+                  </a>
+                  04.12.2014 занятия по религиоведению. Ведёт проф. З.П. Тинина
+              </div>
+			<div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/kruchek/vkk1.JPG" class="thumbnail">
+                      <img src="/Content/images/people/kruchek/vkk1.JPG" alt="">
+                  </a>
+                  Июнь 2013 г. Справа налево: первый ряд: 1.	Гущина Елена Александровна – проректор по научной работе; 2.	Крючек Виктор Кириллович – ректор ВГИИК; второй ряд:3. Стрельцов Василий Николаевич – председатель профсоюзного комитета ГОБУК ВПО ВГИИК
+              </div>
+			<div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/kruchek/vkk2.JPG" class="thumbnail">
+                      <img src="/Content/images/people/kruchek/vkk2.JPG" alt="">
+                  </a>
+                  Апрель 2014 г. Справа налево: 1. Миронова Татьяна Петровна – зав. кафедрой хореографии; 2. Крючек Виктор Кириллович – ректор ГОБУК ВПО ВГИИК
+              </div>
+			<div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/kruchek/vkk3.JPG" class="thumbnail">
+                      <img src="/Content/images/people/kruchek/vkk3.JPG" alt="">
+                  </a>
+                  Международные Дельфийские игры (май, 2014 г.), конкурс-концерт детских и юношеских номеров на Центральной набережной г. Волгограда. Справа налево, на первом ряду, во главе учеников и студентов ГОБУК ВПО ВГИИК – болельщиков конкурса-концерта: 1.	Ленков Николай Николаевич – проректор по технике безопасности; 2. Крючек Виктор Кириллович – ректор ВГИИК
+              </div>
+        </div>
+		<div class="row">
+				<div class="col-xs-6 col-md-2">
+                  <a href="/Content/images/people/kruchek/vkk4.JPG" class="thumbnail">
+                      <img src="/Content/images/people/kruchek/vkk4.JPG" alt="">
+                  </a>
+                  Июнь 2014 г. Крючек Виктор Кириллович – ректор ГОБУК ВПО «Волгоградский государственный институт искусств и культуры», заслуженный работник культуры РФ, профессор, канд. педагогических наук, академик МАИ.
+              </div>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
