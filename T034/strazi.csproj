@@ -353,6 +353,7 @@
     <Content Include="Views\404.cshtml" />
     <Content Include="Views\Shared\_SimpleLayout.cshtml" />
     <Content Include="Views\Home\Works.cshtml" />
+    <Content Include="Views\Shared\Strazi\Butterfly.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">
