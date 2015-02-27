@@ -93,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
-    <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -297,17 +296,6 @@
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload.css" />
     <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
-    <Content Include="Content\pic\back.png" />
-    <Content Include="Content\pic\banner.png" />
-    <Content Include="Content\pic\banner_b.png" />
-    <Content Include="Content\pic\bbanner.png" />
-    <Content Include="Content\pic\menu1.png" />
-    <Content Include="Content\pic\menu2.png" />
-    <Content Include="Content\pic\menu3.png" />
-    <Content Include="Content\pic\menu4.png" />
-    <Content Include="Content\pic\pmb.png" />
-    <Content Include="Content\pic\VGIIIK.jpg" />
-    <Content Include="Content\pic\wb.png" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -460,6 +448,7 @@
     <Folder Include="Content\images\people\kpk\recollections\" />
     <Folder Include="Content\images\people\perehodnik\" />
     <Folder Include="Content\images\photo\archive\" />
+    <Folder Include="Content\pic\" />
     <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
