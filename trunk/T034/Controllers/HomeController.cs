@@ -31,43 +31,7 @@ namespace T034.Controllers
             return PartialView("AuthPartialView", model);
         }
 
-        public ActionResult Archive()
-        {
-            var model = _db.Select<Person>();
-
-            return View(model);
-        }
-
-        public ActionResult Video()
-        {
-            return View();
-        }
-
-        public ActionResult Photo()
-        {
-            //http://blueimp.github.io/Bootstrap-Image-Gallery/
-            //получить адрес сайта
-            //string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
-
-            var model = new List<CarouselViewModel>
-                {
-                    new CarouselViewModel("/Content/images/photo/dpi/", Server.MapPath("/Content/images/photo/dpi/"), "Кафедра ДПИ"),
-                    new CarouselViewModel("/Content/images/photo/staropoltavka/", Server.MapPath("/Content/images/photo/staropoltavka/"), "Профориентация в Старополтавке"),
-                    new CarouselViewModel("/Content/images/photo/24012015/", Server.MapPath("/Content/images/photo/24012015/"), "")
-                };
-
-            return View(model);
-        }
-
-
-
-        public ActionResult Museum(int room)
-        {
-            var viewName = "Rooms/Room" + room;
-            return View(viewName);
-        }
-
-        public ActionResult Presentation()
+        public ActionResult Works()
         {
             return View();
         }
