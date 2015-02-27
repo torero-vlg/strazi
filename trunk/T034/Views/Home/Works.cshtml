@@ -4,3 +4,24 @@
 }
 
 <h2>Готовые работы</h2>
+
+<div class="main-image">
+    <img src="/Content/images/img-01.jpg" alt="Placeholder" class="custom">
+</div>
+
+<ul class="thumbnails">
+    <li><a href="/Content/images/img-01.jpg"><img src="/Content/images/img-01-tn.jpg" alt="Thumbnails"></a></li>
+    <li><a href="/Content/images/img-02.jpg"><img src="/Content/images/img-02-tn.jpg" alt="Thumbnails"></a></li>
+    <li><a href="/Content/images/img-03.jpg"><img src="/Content/images/img-03-tn.jpg" alt="Thumbnails"></a></li>
+</ul>
+
+@*
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
+<script src="/Scripts/jquery.simpleGal.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.thumbnails').simpleGal({
+            mainImage: '.custom'
+        });
+    });
+</script>
