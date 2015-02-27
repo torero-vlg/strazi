@@ -1,5 +1,0 @@
-d:\_dev\vgiik\_trunk\publish\outdir\Db.dll
-d:\_dev\vgiik\_trunk\publish\outdir\Db.pdb
-d:\_dev\vgiik\_trunk\T034.Db\obj\Release\ResolveAssemblyReference.cache
-d:\_dev\vgiik\_trunk\T034.Db\obj\Release\Db.dll
-d:\_dev\vgiik\_trunk\T034.Db\obj\Release\Db.pdb
