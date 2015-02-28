@@ -2,93 +2,153 @@ body
 {
     font-size: .85em;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
+    color: #ffffff;
+    background-color: #53677b;
     background: url("pic/back.png") repeat scroll 0 0 #fff;
 }
 
-
 .main
 {
-    font-size: 13px;
+    font-size: 14px;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #000000;
-    background-color: #ffffff;
-    text-align: justify;
-    background: url("pic/wb.png") repeat scroll 0 0 #fff;
-    width: 900px;
+    background-color: #d3d5da;
+    background: url("pic/light.png") repeat scroll 0 0 #fff;
+    width: 100%;
     padding: 0 0 0 0;
 }
 
-.text
+
+.banner
+{
+    background-color: #53677b;
+    background: url("pic/banner_line.png") repeat scroll 0 0 #fff;
+    width: 100%;
+    height: 280px;
+    text-align: center;
+    padding: 0 0 0 0;
+}
+
+.bban
+{
+    font-family: a_AvanteLt.ttf;
+    src: url("font/a_AvanteLt.ttf");
+    color: #d3d5da;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 18px;
+    background-color: #2b3e54;
+    background: url("pic/bback.png") repeat scroll 0 0 #fff;
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 0;
+}
+
+.cyanline
+{
+    background-color: #06bfd9;
+    background: url("pic/cyan.png") repeat scroll 0 0 #fff;
+    width: 100%;
+    height: 7px;
+    padding: 0 0 0 0;
+}
+
+.greyline
+{
+    background-color: #2e4056;
+    background: url("pic/grey.png") repeat scroll 0 0 #fff;
+    width: 100%;
+    height: 7px;
+    padding: 0 0 0 0;
+}
+
+
+.example
 {
     font-size: 13px;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #000000;
-    background-color: #000000;
-    text-align: justify;
-    background: url("pic/wb.png") repeat scroll 0 0 #fff;
-    padding: 0 20px 0 20px;
+    background-color: #d3d5da;
+    text-align: center;
+    background: url("pic/light.png") repeat scroll 0 0 #fff;
+    padding: 0 0 0 0;
 }
 
-h3
+.ready
+{
+    font-size: 14px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #ffffff;
+    background-color: #2d3f57;
+    text-align: center;
+    background: url("pic/back.png") repeat scroll 0 0 #fff;
+    padding: 20px 20px 20px 20px;
+}
+
+.htext
 {
     font-size: 15px;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #701c05 !important;
-    background-color: #ffffff;
+    color: #02c0e6;
     text-align: center;
-    font-variant: small-caps;
-    font-style: italic;
-    font-weight: bold;
-    background: url("pic/wb.png") repeat scroll 0 0 #fff;
-    padding: 15px;
+    text-shadow: 1px -1px 0px #1e2a38;
 }
 
-h4
+.dban
+{
+    font-family: a_AvanteLt.ttf;
+    src: url("font/a_AvanteLt.ttf");
+    color: #d3d5da;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 18px;
+    background-color: #2d3f57;
+    background: url("pic/back.png") repeat scroll 0 0 #fff;
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 0;
+}
+
+.reklama
 {
     font-size: 13px;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #2b3d54;
+    background-color: #8f9aa7;
+    height: 200px;
     text-align: center;
-    font-variant: small-caps;
-    font-weight: bold;
-    background: url("pic/wb.png") repeat scroll 0 0 #fff;
+    background: url("pic/darkgrey.png") repeat scroll 0 0 #fff;
+    padding: 0 0 0 0;
 }
 
+.dlink
+{
+    background: url("pic/back.png") repeat scroll 0 0 #fff;
+    padding: 5px 20px 10px 0px;
+}
 
 
 /* Styles for bottom menu link
 -----------------------------------------------------------*/
 
-A.bottommenu
-{
-	font-size: 12px;
-        font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-	color: #ffd200;
-	text-decoration: none;
-	font-variant: small-caps;
-	font-style: italic;
-	font-align: right;
-	vertical-align: -25px;
-}
-
-A.bottommenu:hover
-{
-	color: #ffd200;
-	text-decoration: none;
-}
-
 A.a
 {
 	font-size: 12px;
         font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-	color: #701c05;
+	color: #d3d5da;
 	text-decoration: none;
+	font-align: right;
+	background: url("pic/back.png") repeat scroll 0 0 #fff;
+	vertical-align: middle;
+	text-shadow: -1px 1px 0px #2b3e54;
+		      1px -1px 0px #2b3e54;
 }
 
 A.a:hover
 {
-	color: #ffd200;
+	color: #ffffff;
 	text-decoration: none;
 }
 
@@ -98,35 +158,7 @@ A.a:hover
 }
 
 
-.dropdown-menu>li>a
-{
-	background: url("pic/btn.png") repeat scroll 0 0;
-	color: #e9de10 !important;
-}
 
-.dropdown-menu
-{
-	text-decoration: none;
-	background-color:#882002 !important;
-}
-
-
-header,
-footer,
-nav,
-section {
-    display: block;
-}
-
-
-
-.bbanner
-{
-    height: 58px;
-    width: 900px;
-    padding-right: 15px;
-    background: url("pic/bbanner.png"); 
-   }
 
 
 /* Styles for basic forms
