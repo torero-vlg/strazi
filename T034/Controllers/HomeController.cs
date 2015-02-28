@@ -31,7 +31,7 @@ namespace T034.Controllers
             return PartialView("AuthPartialView", model);
         }
 
-        public ActionResult Works()
+        public ActionResult Butterfly()
         {
             return View();
         }
