@@ -1,0 +1,8 @@
+﻿.gallery li {
+    display: inline;
+}
+
+.modal-dialog
+{
+    width: 70%;
+}
