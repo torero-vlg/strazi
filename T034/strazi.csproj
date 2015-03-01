@@ -110,6 +110,7 @@
     <Compile Include="ViewModel\CarouselViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
+    <Compile Include="ViewModel\Strazi\WorkViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -359,6 +360,7 @@
     <Content Include="Views\Shared\Strazi\Butterfly.cshtml" />
     <Content Include="Views\Shared\Strazi\Samples.cshtml" />
     <Content Include="Views\Home\Butterfly.cshtml" />
+    <Content Include="Views\Shared\Strazi\Work.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

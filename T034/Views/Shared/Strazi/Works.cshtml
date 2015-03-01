@@ -3,23 +3,42 @@
         <BR />Картины с кристаллами Swarovski станут изысканным дополнением любого интерьера и самым желанным подарком.
         <BR />Невероятную красоту картин невозможно передать через экран или фото! Это необходимо увидеть своими глазами!
     </p>
-    <div class="row">
+    <div class="row" id="workContent">
         <div class="col-xs-8 col-md-8">
-            <img src="/Content/images/works/Розы от кисы-m.JPG" alt="Placeholder" class="custom">
+            <img src="/Content/images/works/anastasia-600.JPG" alt="Placeholder" class="custom">
         </div>
         <div class="col-xs-4 col-md-4">
-            <p class="text-left">Наименование: Розы от кисы. (20см*30см)</p>
-            <p class="text-left">Количество камней: 150 шт</p>
-            <p class="text-left">Размерность камней: S10. S14. S16</p>
-            <p class="text-left">Стоимость: 1 300 руб</p>
+            <p class="text-left">Наименование: Анастасия (именная)  (20см*30см))</p>
+            <p class="text-left">Количество камней: 124 шт</p>
+            <p class="text-left">Размерность камней: S10</p>
+            <p class="text-left">Стоимость: 1 500 руб</p>
         </div>
         <ul class="thumbnails col-xs-4 col-md-4 text-left">
-            <li><a href="/Content/images/works/Розы от кисы-m.JPG"><img src="/Content/images/works/Розы от кисы-tn.JPG" alt="Thumbnails"></a></li>
-            <li><a href="/Content/images/works/Розы от кисы_1-m.JPG"><img src="/Content/images/works/Розы от кисы_1-tn.JPG" alt="Thumbnails"></a></li>
+            <li><a href="/Content/images/works/anastasia-600.jpg"><img src="/Content/images/works/anastasia-150.jpg" alt="Thumbnails"></a></li>
         </ul>
     </div>
 </div>
 
+<div class="gallery text">
+    <ul>
+        <li><img src="/Content/images/works/anastasia-150.jpg" onclick="getWork('anastasia-150.jpg')"></li>
+        <li><img src="/Content/images/works/butterfly-150.jpg" onclick="getWork('butterfly-150.jpg')"></li>
+        <li><img src="/Content/images/works/nude-150.jpg" onclick="getWork('nude-150.jpg')"></li>
+        <li><img src="/Content/images/works/rosefrmcat-150.jpg" onclick="getWork('rosefrmcat-150.jpg')"></li>
+        <li><img src="/Content/images/works/butterflies-150.jpg" onclick="getWork('butterflies-150.jpg')"></li>
+        <li><img src="/Content/images/works/tiger-150.jpg" onclick="getWork('tiger-150.jpg')"></li>
+        <li><img src="/Content/images/works/cat-150.jpg" onclick="getWork('cat-150.jpg')"></li>
+        <li><img src="/Content/images/works/chmml-150.jpg" onclick="getWork('chmml-150.jpg')"></li>
+        <li><img src="/Content/images/works/oneumbrl-150.jpg" onclick="getWork('oneumbrl-150.jpg')"></li>
+        <li><img src="/Content/images/works/guitar-150.jpg" onclick="getWork('guitar-150.jpg')"></li>
+        <li><img src="/Content/images/works/ladybug-150.jpg" onclick="getWork('ladybug-150.jpg')"></li>
+        <li><img src="/Content/images/works/venicegrdn-150.jpg" onclick="getWork('venicegrdn-150.jpg')"></li>
+        <li><img src="/Content/images/works/venicesky-150.jpg" onclick="getWork('venicesky-150.jpg')"></li>
+        <li><img src="/Content/images/works/smilecat-150.jpg" onclick="getWork('smilecat-150.jpg')"></li>
+        <li><img src="/Content/images/works/orchid-150.jpg" onclick="getWork('orchid-150.jpg')"></li>
+        <li><img src="/Content/images/works/rings-150.jpg" onclick="getWork('rings-150.jpg')"></li>
+    </ul>
+</div>
 
 <script>
     $(document).ready(function () {
@@ -27,5 +46,15 @@
             mainImage: '.custom'
         });
     });
+
+    function  getWork(file) {
+        $.ajax({
+            url: "Home/Work",
+            data: { file: file }
+        })
+      .done(function (html) {
+          $("#workContent").html(html);
+      });
+    }
 </script>
 
