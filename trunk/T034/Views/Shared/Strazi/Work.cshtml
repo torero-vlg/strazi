@@ -1,7 +1,7 @@
 ﻿@model T034.ViewModel.Strazi.WorkViewModel
 
 <div class="col-xs-8 col-md-8">
-    <img src="/Content/images/works/@Model.MediumFile" alt="Placeholder" class="custom">
+    <a href="/Content/images/works/@Model.OriginalFile" target="blank"><img src="/Content/images/works/@Model.MediumFile" alt="Placeholder" class="custom"></a>
 </div>
 <div class="col-xs-4 col-md-4">
     @foreach (var item in Model.Description)
