@@ -3,7 +3,9 @@
 }
 .gallery li img{
     cursor: pointer;
+	margin: 10px;
 }
+
 .modal-dialog
 {
     width: 70%;
