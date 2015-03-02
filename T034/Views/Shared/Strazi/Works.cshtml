@@ -4,18 +4,9 @@
         <BR />Невероятную красоту картин невозможно передать через экран или фото! Это необходимо увидеть своими глазами!
     </p>
     <div class="row" id="workContent">
-        <div class="col-xs-8 col-md-8">
-            <img src="/Content/images/works/anastasia-600.JPG" alt="Placeholder" class="custom">
-        </div>
-        <div class="col-xs-4 col-md-4">
-            <p class="text-left">Наименование: Анастасия (именная)  (20см*30см))</p>
-            <p class="text-left">Количество камней: 124 шт</p>
-            <p class="text-left">Размерность камней: S10</p>
-            <p class="text-left">Стоимость: 1 500 руб</p>
-        </div>
-        <ul class="thumbnails col-xs-4 col-md-4 text-left">
-            <li><a href="/Content/images/works/anastasia-600.jpg"><img src="/Content/images/works/anastasia-150.jpg" alt="Thumbnails"></a></li>
-        </ul>
+        @{
+            Html.RenderAction("Work", "Home", new { file = "anastasia-150.jpg" });
+        }
     </div>
 </div>
 
