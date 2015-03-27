@@ -1,7 +1,18 @@
 ﻿@model T034.ViewModel.Strazi.WorkViewModel
 
 <div class="col-xs-8 col-md-8">
-    <a href="/Content/images/works/@Model.OriginalFile" target="blank"><img src="/Content/images/works/@Model.MediumFile" alt="Placeholder" class="custom"></a>
+@{
+	var folder = "";
+	if (Model.Description.Count > 0)
+	{
+	    folder = "works/";
+	}
+    var modalId = ("#myModal" + folder).Replace("/", "");
+}
+
+    <a href="#" target="blank" data-toggle="modal" data-target="@modalId" data-original="/Content/images/@folder@Model.OriginalFile">
+        <img src="/Content/images/@folder@Model.MediumFile" alt="Placeholder" class="custom">
+    </a>
 </div>
 <div class="col-xs-4 col-md-4">
     @foreach (var item in Model.Description)
@@ -10,6 +21,42 @@
     }
 </div>
 <ul class="thumbnails col-xs-4 col-md-4 text-left">
-    @*<li><a href="/Content/images/works/@Model.MediumFile"><img src="/Content/images/works/@Model.SmallFile" alt="Thumbnails"></a></li>*@
-    <li><img src="/Content/images/works/@Model.SmallFile" alt="Thumbnails"></li>
+    @{
+        if (Model.Description.Any())
+        {
+            <li><img src="/Content/images/@folder@Model.SmallFile" alt="Thumbnails"></li>
+        }
+    }
 </ul>
+
+<div id="@modalId.Replace("#", "")" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/Content/images/@folder@Model.OriginalFile" class="img-responsive center-block" id="originalImg">
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    function centerModal() {
+//        var button = $(event.relatedTarget); // Button that triggered the modal
+//        var recipient = button.data('original'); // Extract info from data-* attributes
+
+//        $('#originalImg').attr('src', recipient);
+
+        $(this).css('display', 'block');
+        var $dialog = $(this).find(".modal-dialog");
+        var offset = ($(window).height() - $dialog.height()) / 2;
+        // Center modal vertically in window
+        $dialog.css("margin-top", offset);
+        //$dialog.css("width", "200px");
+    }
+
+    $('.modal').on('show.bs.modal', centerModal);
+    $(window).on("resize", function () {
+        $('.modal:visible').each(centerModal);
+    });
+</script>

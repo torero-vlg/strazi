@@ -10,42 +10,27 @@
     </div>
 </div>
 
-<div class="gallery text">
-    <ul>
-        <li><img src="/Content/images/works/anastasia-150.jpg" onclick="getWork('anastasia-150.jpg')"></li>
-        <li><img src="/Content/images/works/butterfly-150.jpg" onclick="getWork('butterfly-150.jpg')"></li>
-        <li><img src="/Content/images/works/nude-150.jpg" onclick="getWork('nude-150.jpg')"></li>
-        <li><img src="/Content/images/works/rosefrmcat-150.jpg" onclick="getWork('rosefrmcat-150.jpg')"></li>
-        <li><img src="/Content/images/works/butterflies-150.jpg" onclick="getWork('butterflies-150.jpg')"></li>
-        <li><img src="/Content/images/works/tiger-150.jpg" onclick="getWork('tiger-150.jpg')"></li>
-        <li><img src="/Content/images/works/cat-150.jpg" onclick="getWork('cat-150.jpg')"></li>
-        <li><img src="/Content/images/works/chmml-150.jpg" onclick="getWork('chmml-150.jpg')"></li>
-        <li><img src="/Content/images/works/oneumbrl-150.jpg" onclick="getWork('oneumbrl-150.jpg')"></li>
-        <li><img src="/Content/images/works/guitar-150.jpg" onclick="getWork('guitar-150.jpg')"></li>
-        <li><img src="/Content/images/works/ladybug-150.jpg" onclick="getWork('ladybug-150.jpg')"></li>
-        <li><img src="/Content/images/works/venicegrdn-150.jpg" onclick="getWork('venicegrdn-150.jpg')"></li>
-        <li><img src="/Content/images/works/venicesky-150.jpg" onclick="getWork('venicesky-150.jpg')"></li>
-        <li><img src="/Content/images/works/smilecat-150.jpg" onclick="getWork('smilecat-150.jpg')"></li>
-        <li><img src="/Content/images/works/orchid-150.jpg" onclick="getWork('orchid-150.jpg')"></li>
-        <li><img src="/Content/images/works/rings-150.jpg" onclick="getWork('rings-150.jpg')"></li>
-    </ul>
+<div class="jcarousel-wrapper">
+    <div class="jcarousel gallery text">
+        <ul>
+            <li><img src="/Content/images/works/anastasia-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/butterfly-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/nude-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/rosefrmcat-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/butterflies-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/tiger-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/cat-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/chmml-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/oneumbrl-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/guitar-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/ladybug-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/venicegrdn-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/venicesky-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/smilecat-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/orchid-150.jpg" data-target="#workContent"></li>
+            <li><img src="/Content/images/works/rings-150.jpg" data-target="#workContent"></li>
+        </ul>
+    </div>
+    <a class="jcarousel-control-prev" href="#">‹</a>
+    <a class="jcarousel-control-next" href="#">›</a>
 </div>
-
-<script>
-    $(document).ready(function () {
-        $('.thumbnails').simpleGal({
-            mainImage: '.custom'
-        });
-    });
-
-    function  getWork(file) {
-        $.ajax({
-            url: "Home/Work",
-            data: { file: file }
-        })
-      .done(function (html) {
-          $("#workContent").html(html);
-      });
-    }
-</script>
-

@@ -41,8 +41,8 @@ namespace T034.Controllers
         {
             var model = new WorkViewModel
                 {
-                    OriginalFile = file.Replace("-150.jpg", "-original.jpg"),
-                    MediumFile = file.Replace("-150.jpg", "-600.jpg"),
+                    OriginalFile = file.Replace("-150.jpg", "-original.jpg").Replace("-tn.jpg", ".jpg"),
+                    MediumFile = file.Replace("-150.jpg", "-600.jpg").Replace("-tn.jpg", ".jpg"),
                     SmallFile = file,
                     Description = getDescription(file)
                 };

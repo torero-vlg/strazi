@@ -72,7 +72,7 @@ body
     background-color: #d3d5da;
     text-align: center;
     background: url("pic/light.png") repeat scroll 0 0 #fff;
-    padding: 0 0 0 0;
+    padding: 20px 20px 20px 20px;
 }
 
 .ready
