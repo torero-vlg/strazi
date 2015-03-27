@@ -5,7 +5,7 @@
 	<property name="main.dir" value="${directory::get-current-directory()}"/>
 	<property name="publish.dir" value="${main.dir}\publish"/>
 	<property name="out.dir" value="${publish.dir}\outdir"/>
-	<property name="SolutionFile" value="${main.dir}\strazi.sln"/>    
+	<property name="SolutionFile" value="${main.dir}\vgiik.sln"/>    
 	<property name="MSBuildPath" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"/>    
 	<property name="build.configuration" value="Release"/>
 	<property name="tools" value="${main.dir}\Tools"/>

@@ -1,55 +1,38 @@
-﻿<div class="gallery text">
-    <ul>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/1003151467.JPG"><img src="/Content/images/1003151467-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/1005301257.JPG"><img src="/Content/images/1005301257-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/113nk_enl.JPG"><img src="/Content/images/113nk_enl-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/14_8.JPG"><img src="/Content/images/14_8-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/1449265.JPG"><img src="/Content/images/1449265-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/19.JPG"><img src="/Content/images/19-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/23.JPG"><img src="/Content/images/23-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/3.JPG"><img src="/Content/images/3-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/3c581554d1418b8c0e9fba8ecfad32ac_1333597374_800_800.JPG"><img src="/Content/images/3c581554d1418b8c0e9fba8ecfad32ac_1333597374_800_800-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/4.JPG"><img src="/Content/images/4-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/4_5.JPG"><img src="/Content/images/4_5-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/5.JPG"><img src="/Content/images/5-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/64450731_800.JPG"><img src="/Content/images/64450731_800-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/657091295.JPG"><img src="/Content/images/657091295-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/866187450.JPG"><img src="/Content/images/866187450-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/d200_12605-4.JPG"><img src="/Content/images/d200_12605-4-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/DSC03415.JPG"><img src="/Content/images/DSC03415-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/img1213_22093_big.JPG"><img src="/Content/images/img1213_22093_big-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/IMG124.JPG"><img src="/Content/images/IMG124-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/mujchine.JPG"><img src="/Content/images/mujchine-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/Дама с собачкой.JPG"><img src="/Content/images/Дама с собачкой-tn.JPG" alt="Thumbnails"></a></li>
-        <li><a href="" data-toggle="modal" data-target="#imgModal" data-whatever="/Content/images/МоЁ.JPG"><img src="/Content/images/МоЁ-tn.JPG" alt="Thumbnails"></a></li>
-    </ul>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div id="modal-body">
-            </div>
-        </div>
+﻿<div class="text">
+    <div class="row" id="sampleContent">
+        @{
+            Html.RenderAction("Work", "Home", new { file = "1003151467-tn.jpg" });
+        }
     </div>
 </div>
-<script type="text/javascript">
-    $('#imgModal').on('show.bs.modal', function (event) {
 
-        var a = $(event.relatedTarget); // Button that triggered the modal
-        var whatever = a.data('whatever'); // Extract info from data-* attributes
-        $('#modal-body').html('<img src="' + whatever + '">');
-//        var w = $('#modal-body').find('img').width();
-//        alert(w);
-//        $('.modal-dialog').width(w);
-        //        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        //        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        //        var modal = $(this);
-        //        modal.find('.modal-title').text('New message to ' + recipient);
-        //        modal.find('.modal-body input').val(recipient);
-    })
-</script>
+<div class="jcarousel-wrapper">
+    <div class="jcarousel gallery text">
+        <ul>
+            <li><img src="/Content/images/1003151467-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/1005301257-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/113nk_enl-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/14_8-150.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/1449265-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/19-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/23-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/3-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/3c581554d1418b8c0e9fba8ecfad32ac_1333597374_800_800-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/4-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/4_5-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/5-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/64450731_800-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/657091295-150.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/866187450-150.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/d200_12605-4-150.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/DSC03415-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/img1213_22093_big-tn.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/IMG124-150.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/mujchine-150.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/Дама с собачкой-150.jpg" data-target="#sampleContent"></li>
+            <li><img src="/Content/images/МоЁ-tn.jpg" data-target="#sampleContent"></li>
+        </ul>
+    </div>
+    <a class="jcarousel-control-prev" href="#">‹</a>
+    <a class="jcarousel-control-next" href="#">›</a>
+</div>

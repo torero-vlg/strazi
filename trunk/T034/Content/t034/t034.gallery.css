@@ -2,7 +2,7 @@
     display: inline;
 }
 .gallery li img{
-    cursor: pointer;
+    cursor: pointer !important;
 	margin: 10px;
 }
 
