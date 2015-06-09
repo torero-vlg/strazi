@@ -111,6 +111,30 @@ body
     padding: 0 0 0 0;
 }
 
+.dband
+{
+    font-family: a_AvanteLt.ttf;
+    src: url("font/a_AvanteLt.ttf");
+    color: #2d3f57;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0 0 0;
+}
+
+
+.dbanw
+{
+    font-family: a_AvanteLt.ttf;
+    src: url("font/a_AvanteLt.ttf");
+    color: #293d54;
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+    padding: 0 0 0 0;
+}
+
 .reklama
 {
     font-size: 13px;

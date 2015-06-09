@@ -365,6 +365,7 @@
     <Content Include="Views\Shared\Strazi\Samples.cshtml" />
     <Content Include="Views\Home\Butterfly.cshtml" />
     <Content Include="Views\Shared\Strazi\Work.cshtml" />
+    <Content Include="Views\Shared\Strazi\Sample.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

@@ -1,6 +1,6 @@
-function  getWork(file, targetId) {
+function  getWork(file, targetId, url) {
 	$.ajax({
-		url: "Home/Work",
+		url: url,
 		data: { file: file }
 	})
   .done(function (html) {
@@ -10,5 +10,5 @@ function  getWork(file, targetId) {
 
 $('.gallery ul li img').click(function () {
     var src = this.src;
-    getWork(src.substring(src.lastIndexOf('/') + 1), $(this).data("target"));
+    getWork(src.substring(src.lastIndexOf('/') + 1), $(this).data("target"), $(this).data("src"));
 });

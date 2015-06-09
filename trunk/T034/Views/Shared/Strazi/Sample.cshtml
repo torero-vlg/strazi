@@ -1,6 +1,5 @@
 ﻿@model T034.ViewModel.Strazi.WorkViewModel
 
-<div class="col-xs-8 col-md-8">
 @{
 	var folder = "";
 	if (Model.Description.Count > 0)
@@ -10,24 +9,9 @@
     var modalId = ("#myModal" + folder).Replace("/", "");
 }
 
-    <a href="#" target="blank" data-toggle="modal" data-target="@modalId" data-original="/Content/images/@folder@Model.OriginalFile">
-        <img src="/Content/images/@folder@Model.MediumFile" alt="Placeholder" class="custom">
-    </a>
-</div>
-<div class="col-xs-4 col-md-4">
-    @foreach (var item in Model.Description)
-    {
-        <p class="text-left">@item</p>
-    }
-</div>
-<ul class="thumbnails col-xs-4 col-md-4 text-left">
-    @{
-        if (Model.Description.Any())
-        {
-            <li><img src="/Content/images/@folder@Model.SmallFile" alt="Thumbnails"></li>
-        }
-    }
-</ul>
+<a href="#" target="blank" data-toggle="modal" data-target="@modalId" data-original="/Content/images/@folder@Model.OriginalFile" style="vertical-align: middle;">
+    <img src="/Content/images/@folder@Model.MediumFile" alt="Placeholder" class="custom" style="max-width: 100%;max-height: 100%;">
+</a>
 
 <div id="@modalId.Replace("#", "")" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -44,10 +28,10 @@
 
 <script>
     function centerModal() {
-//        var button = $(event.relatedTarget); // Button that triggered the modal
-//        var recipient = button.data('original'); // Extract info from data-* attributes
+        //        var button = $(event.relatedTarget); // Button that triggered the modal
+        //        var recipient = button.data('original'); // Extract info from data-* attributes
 
-//        $('#originalImg').attr('src', recipient);
+        //        $('#originalImg').attr('src', recipient);
 
         $(this).css('display', 'block');
         var $dialog = $(this).find(".modal-dialog");
