@@ -1,4 +1,10 @@
-﻿<div class="row">
+﻿  <script type="text/javascript">      
+       jQuery(function () {
+          jQuery('a[rel*=lightbox_s]').lightBox();
+      }); 
+</script>
+
+<div class="row">
     <div class="col-xs-6 col-md-6">
         <div class="htext">
             <BR/> Подарок! Эксклюзивный подарок!
@@ -22,9 +28,12 @@
         </div>
     </div>
     <div class="col-xs-6 col-md-6" id="sampleContent" style="height: 423px">
-        @{
-            Html.RenderAction("Sample", "Home", new { file = "1003151467-tn.jpg" });
-        }
+        <a name="a105099" rel="lightbox_s" href="/Content/images/1003151467.jpg" title="">
+            <img border="0" src="/Content/images/1003151467.jpg" alt="">
+        </a>
+        <a name="a105100" rel="lightbox_s" href="/Content/images/1005301257.jpg" title="">
+            <img border="0" src="/Content/images/1005301257-tn.jpg" alt="">
+        </a>
     </div>
 </div>
 <div class="row">
