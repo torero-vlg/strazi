@@ -1,11 +1,33 @@
-﻿<div class="text">
+﻿<script type="text/javascript">
+    $(function () {
+        jQuery('a[rel*=lightbox_w]').lightBox();
+        showWork('anastasia-150.jpg', '#workContent');
+    });
+</script>
+
+<div class="text">
     <p class="htext">Хрустальные камни Swarovski восхищают и завораживают своим сиянием!
         <BR />Картины с кристаллами Swarovski станут изысканным дополнением любого интерьера и самым желанным подарком.
         <BR />Невероятную красоту картин невозможно передать через экран или фото! Это необходимо увидеть своими глазами!
     </p>
-    <div class="row" id="workContent">
+    <div id="workContent">
         @{
             Html.RenderAction("Work", "Home", new { file = "anastasia-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "butterfly-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "nude-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "rosefrmcat-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "butterflies-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "tiger-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "cat-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "chmml-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "oneumbrl-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "guitar-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "ladybug-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "venicegrdn-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "venicesky-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "smilecat-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "orchid-150.jpg" });
+            Html.RenderAction("Work", "Home", new { file = "rings-150.jpg" });
         }
     </div>
 </div>
