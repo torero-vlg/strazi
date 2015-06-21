@@ -167,7 +167,6 @@ A.a
 	background: url("pic/back.png") repeat scroll 0 0 #fff;
 	vertical-align: middle;
 	text-shadow: -1px 1px 0px #2b3e54;
-		      1px -1px 0px #2b3e54;
 }
 
 A.a:hover
@@ -244,4 +243,15 @@ textarea
 .validation-summary-valid
 {
     display: none;
+}
+
+.v-align-middle a
+{
+    vertical-align: middle;
+}
+
+.v-align-middle a img
+{
+    max-width: 100%;
+    max-height: 100%;
 }
