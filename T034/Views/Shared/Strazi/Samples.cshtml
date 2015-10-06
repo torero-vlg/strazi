@@ -1,10 +1,83 @@
 ﻿<script type="text/javascript">
-       $(function () {
-           jQuery('a[rel*=lightbox_s]').lightBox();
-           showSample('1003151467-tn.jpg', '#sampleContent');
-      });
-</script>
+    $(function () {
+        jQuery('a[rel*=lightbox_s]').lightBox();
+        changeCategory('picture');
+    });
 
+       function changeCategory(category) {
+
+           loadLightBox(category);
+           loadCarousel(category);
+           changeTitle(category);
+
+       }
+       function loadLightBox(category) {
+           $.ajax({
+               url: '/Home/LoadLightBox',
+               data: { category: category }
+           })
+          .done(function (html) {
+              $('#sampleContent').html(html);
+              jQuery('a[rel*=lightbox_s]').lightBox();
+
+              $('#sampleContent a').each(function (index, element) {
+                  if (index != 0)
+                      $(element).hide();
+                  else
+                      $(element).show();
+              });
+          });
+      }
+      function loadCarousel(category) {
+          $.ajax({
+              url: '/Home/LoadCarousel',
+              data: { category: category }
+          })
+          .done(function (html) {
+              $('#carouselContent').html(html);
+              initCarousel();
+          });
+      }
+       
+       function changeTitle(category) {
+           if (category == 'interior') {
+               $('#imgTitlePic').hide();
+               $('#imgTitleInt').show();
+               $('#imgTitleCar').hide();
+
+               $('#linkCar').show();
+               $('#linkPic').show();
+               $('#linkInt').hide();
+           }
+           if (category == 'car') {
+               $('#imgTitlePic').hide();
+               $('#imgTitleInt').hide();
+               $('#imgTitleCar').show();
+               
+               $('#linkCar').hide();
+               $('#linkPic').show();
+               $('#linkInt').show();
+           }
+           if (category == 'picture') {
+               $('#imgTitlePic').show();
+               $('#imgTitleInt').hide();
+               $('#imgTitleCar').hide();
+
+               $('#linkCar').show();
+               $('#linkPic').hide();
+               $('#linkInt').show();
+           }
+       }
+</script>
+<div class="row">
+    <div class="col-xs-6 col-md-6">
+    </div>
+    <div class="col-xs-6 col-md-6" id="titleCategory">
+        <img src="/Content/pic/title_pic.png" height="48px" id="imgTitlePic">
+        <img src="/Content/pic/title_int.png" height="48px" id="imgTitleInt">
+        <img src="/Content/pic/title_car.png" height="48px" id="imgTitleCar">
+    </div>
+</div>
 <div class="row">
     <div class="col-xs-6 col-md-6">
         <div class="htext">
@@ -29,81 +102,6 @@
         </div>
     </div>
     <div class="col-xs-6 col-md-6 v-align-middle" id="sampleContent" style="height: 500px">
-        
-
-        <a name="a105099" rel="lightbox_s" href="/Content/images/1003151467.jpg" title="">
-            <img border="0" src="/Content/images/1003151467.jpg" alt="">
-        </a>
-        <a name="a105100" rel="lightbox_s" href="/Content/images/1005301257.jpg" title="">
-            <img border="0" src="/Content/images/1005301257.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/113nk_enl.jpg" title="">
-            <img border="0" src="/Content/images/113nk_enl.jpg" alt="">
-        </a>
-
-        <a name="a105099" rel="lightbox_s" href="/Content/images/14_8-original.jpg" title="">
-            <img border="0" src="/Content/images/14_8-600.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/1449265.jpg" title="">
-            <img border="0" src="/Content/images/1449265.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/19.jpg" title="">
-            <img border="0" src="/Content/images/19.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/23.jpg" title="">
-            <img border="0" src="/Content/images/23.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/3.jpg" title="">
-            <img border="0" src="/Content/images/3.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/3c581554d1418b8c0e9fba8ecfad32ac_1333597374_800_800.jpg" title="">
-            <img border="0" src="/Content/images/3c581554d1418b8c0e9fba8ecfad32ac_1333597374_800_800.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/4.jpg" title="">
-            <img border="0" src="/Content/images/4.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/4_5.jpg" title="">
-            <img border="0" src="/Content/images/4_5.jpg" alt="">
-        </a>
-        
-        <a name="a105099" rel="lightbox_s" href="/Content/images/5.jpg" title="">
-            <img border="0" src="/Content/images/5.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/64450731_800.jpg" title="">
-            <img border="0" src="/Content/images/64450731_800.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/657091295-original.jpg" title="">
-            <img border="0" src="/Content/images/657091295-600.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/866187450-original.jpg" title="">
-            <img border="0" src="/Content/images/866187450-600.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/d200_12605-4-original.jpg" title="">
-            <img border="0" src="/Content/images/d200_12605-4-600.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/DSC03415.jpg" title="">
-            <img border="0" src="/Content/images/DSC03415.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/img1213_22093_big.jpg" title="">
-            <img border="0" src="/Content/images/img1213_22093_big.jpg" alt="">
-        </a>
-
-        <a name="a105099" rel="lightbox_s" href="/Content/images/IMG124-original.jpg" title="">
-            <img border="0" src="/Content/images/IMG124-600.jpg" alt="">
-        </a>
-
-        <a name="a105099" rel="lightbox_s" href="/Content/images/mujchine-original.jpg" title="">
-            <img border="0" src="/Content/images/mujchine-600.jpg" alt="">
-        </a>
-        <a name="a105099" rel="lightbox_s" href="/Content/images/dama-original.jpg" title="">
-            <img border="0" src="/Content/images/dama-600.jpg" alt="">
-        </a>
-
-        <a name="a105099" rel="lightbox_s" href="/Content/images/my.jpg" title="">
-            <img border="0" src="/Content/images/my.jpg" alt="">
-        </a>
-
-
     </div>
 </div>
 <div class="row">
@@ -114,35 +112,19 @@
         <div class="dband"><p>... и про себя не забывайте! Сделайте уникальными свои предметы интерьера и любимое авто!</p></div>
     </div>
 </div>
-
-<div class="jcarousel-wrapper">
-    <div class="jcarousel gallery text">
-        <ul>
-            <li><img src="/Content/images/1003151467-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/1005301257-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/113nk_enl-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/14_8-150.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/1449265-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/19-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/23-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/3-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/3c581554d1418b8c0e9fba8ecfad32ac_1333597374_800_800-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/4-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/4_5-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/5-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/64450731_800-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/657091295-150.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/866187450-150.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/d200_12605-4-150.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/DSC03415-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/img1213_22093_big-tn.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/IMG124-150.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/mujchine-150.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/dama-150.jpg" data-target="#sampleContent"></li>
-            <li><img src="/Content/images/my-tn.jpg" data-target="#sampleContent"></li>
-        </ul>
+<div class="row">
+    <div class="col-md-6" id="linkCar">
+        <a href="#"><img src="/Content/pic/link_car.png" height="48px" onclick="changeCategory('car');"></a>
     </div>
-    <a class="jcarousel-control-prev" href="#">‹</a>
-    <a class="jcarousel-control-next" href="#">›</a>
+    <div class="col-md-6" id="linkPic">
+        <a href="#"><img src="/Content/pic/link_pic.png" height="48px" onclick="changeCategory('picture');"></a>
+    </div>
+    <div class="col-md-6" id="linkInt">
+        <a href="#"><img src="/Content/pic/link_int.png" height="48px" onclick="changeCategory('interior');"></a>
+    </div>
 </div>
-
+<div class="row">
+    <div class="col-md-12" id="carouselContent">
+        
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model string
+
+<div class="jcarousel-wrapper">
+    <div class="jcarousel gallery text">
+        <ul id="">
+            @{
+                var path = "/Content/images/" + Model;
+                var directory = new DirectoryInfo(Server.MapPath(path));
+
+                var files = directory.GetFiles().Where(f => f.Name.EndsWith("-tn.jpg"));
+
+                foreach (var file in files)
+                {
+                        <li><img src="@path/@file.Name" data-target="#sampleContent"></li>
+                }
+    
+    
+            }
+        </ul>
+    </div>
+    <a class="jcarousel-control-prev" href="#">‹</a>
+    <a class="jcarousel-control-next" href="#">›</a>
+</div>
+
+<script src="@Url.Content("~/Scripts/jcarousel/jquery.jcarousel.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jcarousel/jcarousel.responsive.js")" type="text/javascript"></script>

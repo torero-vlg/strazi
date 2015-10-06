@@ -1,48 +1,5 @@
 ﻿@model T034.ViewModel.Strazi.WorkViewModel
 
-@{
-	var folder = "";
-	if (Model.Description.Count > 0)
-	{
-	    folder = "works/";
-	}
-    var modalId = ("#myModal" + folder).Replace("/", "");
-}
-
-<a href="#" target="blank" data-toggle="modal" data-target="@modalId" data-original="/Content/images/@folder@Model.OriginalFile" style="vertical-align: middle;">
-    <img src="/Content/images/@folder@Model.MediumFile" alt="Placeholder" class="custom" style="max-width: 100%;max-height: 100%;">
+<a name="a105099" rel="lightbox_s" href="/Content/images/@Model.OriginalFile" title="">
+    <img border="0" src="/Content/images/@Model.MediumFile" alt="">
 </a>
-
-<div id="@modalId.Replace("#", "")" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-body">
-            <img src="/Content/images/@folder@Model.OriginalFile" class="img-responsive center-block" id="originalImg">
-            <a class="jcarousel-control-prev" href="#">‹</a>
-            <a class="jcarousel-control-next" href="#">›</a>
-        </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-    function centerModal() {
-        //        var button = $(event.relatedTarget); // Button that triggered the modal
-        //        var recipient = button.data('original'); // Extract info from data-* attributes
-
-        //        $('#originalImg').attr('src', recipient);
-
-        $(this).css('display', 'block');
-        var $dialog = $(this).find(".modal-dialog");
-        var offset = ($(window).height() - $dialog.height()) / 2;
-        // Center modal vertically in window
-        $dialog.css("margin-top", offset);
-        //$dialog.css("width", "200px");
-    }
-
-    $('.modal').on('show.bs.modal', centerModal);
-    $(window).on("resize", function () {
-        $('.modal:visible').each(centerModal);
-    });
-</script>

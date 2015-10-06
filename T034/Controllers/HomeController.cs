@@ -61,6 +61,16 @@ namespace T034.Controllers
             return PartialView("Strazi/Work", model);
         }
 
+        public ActionResult LoadLightBox(string category)
+        {
+            return PartialView("Strazi/CategoryForLightBox", category);
+        }
+
+        public ActionResult LoadCarousel(string category)
+        {
+            return PartialView("Strazi/CategoryForCarousel", category);
+        }
+
         private List<string> getDescription(string file)
         {
             var result = new List<string>();

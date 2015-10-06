@@ -1,0 +1,22 @@
+﻿@model string
+
+@{
+        var path = "/Content/images/" + Model;
+        var directory = new DirectoryInfo(Server.MapPath(path));
+
+        var files = directory.GetFiles().Where(f => f.Name.EndsWith("-tn.jpg"));
+
+        foreach (var file in files)
+        {
+            var medium = file.Name.Replace("-tn.jpg", ".jpg");
+            var original = File.Exists(Path.Combine(Server.MapPath(path), file.Name.Replace("-tn.jpg", "-original.jpg"))) ?
+                file.Name.Replace("-tn.jpg", "-original.jpg") :
+                file.Name.Replace("-tn.jpg", ".jpg");
+            <a name="a105099" rel="lightbox_s" href="@path/@original" title="">
+                <img border="0" src='@path/@medium' alt="">
+            </a>
+        }
+    }
+
+
+
