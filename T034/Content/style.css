@@ -123,6 +123,12 @@ body
     padding: 0 0 0 0;
 }
 
+.dband ul
+{
+    list-style: outside disc none;
+    list-style-type: disc;
+    list-style-position: inside;
+}
 
 .dbanw
 {

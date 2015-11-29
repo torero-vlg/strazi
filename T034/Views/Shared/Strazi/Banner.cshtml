@@ -1,0 +1,29 @@
+﻿<canvas id="canvasBanner"></canvas>
+<script type="text/javascript">
+    //установка параметров
+    var SCREEN_WIDTH = 950,
+        SCREEN_HEIGHT = 235,
+        mousePos = { x: 400, y: 300 },
+
+        // create canvas
+        canvas = document.getElementById('canvasBanner'),
+        context = canvas.getContext('2d'),
+        particles = [],
+        stars = [],
+        colorCode = 0,
+        background = new Image(),
+        y_top = 90, y_bottom = 160, x_top = 80, x_bottom = 620;
+
+
+    //инициализация элемента
+    $(document).ready(function () {
+        canvas.width = SCREEN_WIDTH;
+        canvas.height = SCREEN_HEIGHT;
+        setInterval(launch, 2000);
+        setInterval(loop, 20);
+        background.src = "/Content/pic/banner.png";
+        background.onload = function () { context.drawImage(background, 0, 0); }
+    });
+</script>
+
+

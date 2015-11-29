@@ -444,6 +444,7 @@
     <Content Include="Views\Shared\Strazi\Sample.cshtml" />
     <Content Include="Views\Shared\Strazi\CategoryForLightBox.cshtml" />
     <Content Include="Views\Shared\Strazi\CategoryForCarousel.cshtml" />
+    <Content Include="Views\Shared\Strazi\Banner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

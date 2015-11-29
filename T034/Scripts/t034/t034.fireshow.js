@@ -79,7 +79,7 @@ function getRandomInt(min, max) {
 
 //--------------------------------------------
 
-function Rocket(x, y) {
+function Star(x, y) {
     Particle.apply(this, [{
         x: x,
         y: y}]);
@@ -87,28 +87,26 @@ function Rocket(x, y) {
     this.explosionColor = 0;
 }
 
-Rocket.prototype = new Particle();
-Rocket.prototype.constructor = Rocket;
+Star.prototype = new Particle();
+Star.prototype.constructor = Star;
 
 //отрисовка сияния
-Rocket.prototype.explode = function() {
+Star.prototype.explode = function () {
     var count =  Math.random() * 10 + 10;//Math.random() * 10 + 50;
 	particles = [];
-	//var angle = Math.random() * Math.PI * 2;//getRandomInt(0, 361);
-	
+
 	var angle = 0, delta = getRandomInt(30, 61);
-	// emulate 3D effect by using cosine and put more particles in the middle
-       
-		
+
     for (var i = 0; i < count; i++) {
         var particle = new Particle(this.pos);
 
-        var speed = Math.cos(Math.random() * Math.PI / 2) * getRandomInt(1, 10);//Math.cos(Math.random() * Math.PI / 2) * getRandomInt(1, 10);
+        // emulate 3D effect by using cosine and put more particles in the middle
+        var speed = Math.cos(Math.random() * Math.PI / 2) * getRandomInt(1, 10);
 	
         particle.vel.x = Math.cos(angle) * speed;
         particle.vel.y = Math.sin(angle) * speed;
 
-        particle.size = 2;//10;
+        particle.size = 2;
 
         particle.resistance = 1;
         particle.shrink = Math.random() * 0.05 + 0.93; //спад
@@ -119,19 +117,16 @@ Rocket.prototype.explode = function() {
         particles.push(particle);
 		
 		angle = angle + delta;
-		//if(angle > 360){
-		//	angle =0;
-		//}
     }
 };
 
 //затухание 
-Rocket.prototype.attenuation = function() {
+Star.prototype.attenuation = function () {
 	context.drawImage(background,0,0);
 };
 
 //отрисовка
-Rocket.prototype.render = function(c) {
+Star.prototype.render = function (c) {
     if (!this.exists()) {
 		this.attenuation();
         return;
@@ -159,77 +154,41 @@ Rocket.prototype.render = function(c) {
     c.restore();
 };  
 
-
-
-//установка параметров
-var SCREEN_WIDTH = 950,//window.innerWidth,
-    SCREEN_HEIGHT = 235,//window.innerHeight,
-    mousePos = { x: 400, y: 300 },
-
-    // create canvas
-    canvas = document.getElementById('canvas'),//document.createElement('canvas'),
-    context = canvas.getContext('2d'),
-    particles = [],
-    rockets = [],
-    //MAX_PARTICLES = 2,
-    colorCode = 0,
-	background = new Image(),
-	y_top = 90, y_bottom = 160, x_top = 80, x_bottom = 620;
-
-	
-//инициализация элемента
-$(document).ready(function() {
-    //document.body.appendChild(canvas);
-    canvas.width = SCREEN_WIDTH;
-    canvas.height = SCREEN_HEIGHT;
-    setInterval(launch, 2000);
-    setInterval(loop, 20); //1000 / 50);
-	background.src = "../../Content/pic/banner.png";
-	background.onload = function(){ context.drawImage(background,0,0); }
-});
-
 //задаем начальные координаты, которые попадают в заданный диапазон, прорисоваваем только то сияние,
 function launch() {
-    //launchFrom(mousePos.x, mousePos.y);
-	//var xx = getRandomInt(1, 950), yy =getRandomInt(1, 235);
-	var xx = getRandomInt(80, 620), yy =getRandomInt(90, 160);
-	
-	//if(yy > y_top && yy < y_bottom && xx > x_top && xx < x_bottom){
-		launchFrom(xx, yy);
-	//}
+    launchFrom(getRandomInt(x_top, x_bottom), getRandomInt(y_top, y_bottom));
 }
 
 function launchFrom(x, y) {
-	rockets = [];
+    stars = [];
 	particles = [];
-    //if (rockets.length < 10) {
-        var rocket = new Rocket(x, y);
-        rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
-        rocket.vel.y = Math.random() * -3 - 4;
-        rocket.vel.x = Math.random() * 6 - 3;
-        rocket.size = 1;
-        rocket.shrink = 0.999;
-        rockets.push(rocket);
-   // }
+
+	var star = new Star(x, y);
+    star.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
+    star.vel.y = Math.random() * -3 - 4;
+    star.vel.x = Math.random() * 6 - 3;
+    star.size = 1;
+    star.shrink = 0.999;
+    stars.push(star);
 }
 
 function loop() {
-    var existingRockets = [];
+    var existingStars = [];
 
-    for (var i = 0; i < rockets.length; i++) {
+    for (var i = 0; i < stars.length; i++) {
         // update and render
-        rockets[i].update();
-        rockets[i].render(context);
+        stars[i].update();
+        stars[i].render(context);
 
 		/* Explosion rules */
-        if (rockets[i].pos.y > y_top && rockets[i].pos.y < y_bottom && rockets[i].pos.x > x_top && rockets[i].pos.x < x_bottom){
-            rockets[i].explode();
+        if (stars[i].pos.y > y_top && stars[i].pos.y < y_bottom && stars[i].pos.x > x_top && stars[i].pos.x < x_bottom) {
+            stars[i].explode();
         } else {
-            existingRockets.push(rockets[i]);
+            existingStars.push(stars[i]);
         }
     }
 
-    rockets = existingRockets; 
+    stars = existingStars;
 	
     var existingParticles = [];
 
@@ -246,7 +205,7 @@ function loop() {
     // update array with existing particles - old particles should be garbage collected
     particles = existingParticles;
 
-    while (particles.length > Math.floor(Math.random() * 360 / 10) * 10){//MAX_PARTICLES) {
+    while (particles.length > Math.floor(Math.random() * 360 / 10) * 10){
         particles.shift();
     }
 }
