@@ -77,6 +77,27 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function getRandomColorInterval() {
+    //Math.floor(Math.random() * 200); 
+    //1 - 16 - красные, 160 - 190-голубые, -260 - 270-фиолет, 330-350-розовые, 350 - 360 - красно-розовые
+
+    var select = getRandomInt(1, 5);
+    if (select == 1)
+    {
+        return getRandomInt(1, 17);
+    }
+
+    if (select == 2) {
+        return getRandomInt(160, 191);
+    }
+
+    if (select == 3) {
+        return getRandomInt(330, 350);
+    }
+
+    return getRandomInt(350, 361);
+}
+
 //--------------------------------------------
 
 function Star(x, y) {
@@ -156,7 +177,13 @@ Star.prototype.render = function (c) {
 
 //задаем начальные координаты, которые попадают в заданный диапазон, прорисоваваем только то сияние,
 function launch() {
-    launchFrom(getRandomInt(x_top, x_bottom), getRandomInt(y_top, y_bottom));
+    var select = getRandomInt(1, 3);
+    if (select == 1) {
+        launchFrom(getRandomInt(x_top_show, x_bottom_show), getRandomInt(y_top_show, y_bottom_show));
+    }
+    else {
+        launchFrom(getRandomInt(x2_top_show, x2_bottom_show), getRandomInt(y2_top_show, y2_bottom_show));
+    }
 }
 
 function launchFrom(x, y) {
@@ -164,7 +191,7 @@ function launchFrom(x, y) {
 	particles = [];
 
 	var star = new Star(x, y);
-    star.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
+	star.explosionColor = getRandomColorInterval();//Math.floor(Math.random() * 360 / 10) * 10; 
     star.vel.y = Math.random() * -3 - 4;
     star.vel.x = Math.random() * 6 - 3;
     star.size = 1;
@@ -181,11 +208,11 @@ function loop() {
         stars[i].render(context);
 
 		/* Explosion rules */
-        if (stars[i].pos.y > y_top && stars[i].pos.y < y_bottom && stars[i].pos.x > x_top && stars[i].pos.x < x_bottom) {
+       // if (stars[i].pos.y > y_top && stars[i].pos.y < y_bottom && stars[i].pos.x > x_top && stars[i].pos.x < x_bottom) {
             stars[i].explode();
-        } else {
-            existingStars.push(stars[i]);
-        }
+        //} else {
+        //    existingStars.push(stars[i]);
+       // }
     }
 
     stars = existingStars;

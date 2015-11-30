@@ -1,4 +1,4 @@
-﻿<canvas id="canvasBanner"></canvas>
+﻿<div id="fireshow"></div>
 <script type="text/javascript">
     //установка параметров
     var SCREEN_WIDTH = 950,
@@ -6,23 +6,42 @@
         mousePos = { x: 400, y: 300 },
 
         // create canvas
-        canvas = document.getElementById('canvasBanner'),
-        context = canvas.getContext('2d'),
+        canvas,// = document.getElementById('canvasBanner'),
+        context,// = canvas.getContext('2d'),
         particles = [],
         stars = [],
         colorCode = 0,
         background = new Image(),
-        y_top = 90, y_bottom = 160, x_top = 80, x_bottom = 620;
-
+        y_top_show = 90, y_bottom_show = 160, x_top_show = 80, x_bottom_show = 620,
+        y2_top_show = 180, y2_bottom_show = 199, x2_top_show = 332, x2_bottom_show = 850;
 
     //инициализация элемента
     $(document).ready(function () {
-        canvas.width = SCREEN_WIDTH;
-        canvas.height = SCREEN_HEIGHT;
-        setInterval(launch, 2000);
-        setInterval(loop, 20);
-        background.src = "/Content/pic/banner.png";
-        background.onload = function () { context.drawImage(background, 0, 0); }
+
+        if(navigator.userAgent.indexOf('MSIE') != -1)
+        {
+            var detectIEregexp = /MSIE (\d+\.\d+);/ //test for MSIE x.x
+            if (detectIEregexp.test(navigator.userAgent)) { //if some form of IE
+                var ieversion = new Number(RegExp.$1) // capture x.x portion and store as a number
+                if (ieversion < 9) {
+                    $('#fireshow').append('<img src="/Content/pic/banner.png" alt="Баннер" height="235px" width="950px">');
+                    return;
+                }
+            }
+        }
+
+        {
+            $('#fireshow').append('<canvas id="canvasBanner"></canvas>');
+            canvas = document.getElementById('canvasBanner');
+            context = canvas.getContext('2d');
+
+            canvas.width = SCREEN_WIDTH;
+            canvas.height = SCREEN_HEIGHT;
+            setInterval(launch, 2000);
+            setInterval(loop, 20);
+            background.src = "/Content/pic/banner.png";
+            background.onload = function () { context.drawImage(background, 0, 0); }
+        }
     });
 </script>
 
