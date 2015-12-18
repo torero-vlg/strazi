@@ -90,7 +90,7 @@ body{
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #02c0e6;
     text-align: center;
-    text-shadow: 1px -1px 0px #1e2a38;
+    text-shadow: 1px 0px 1px #050922, 0px 1px 1px #050922;
     min-width: 475px;
 }
 
