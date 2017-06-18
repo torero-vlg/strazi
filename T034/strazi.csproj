@@ -386,11 +386,30 @@
     <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
     <Content Include="Content\jquery.lightbox-0.5.css" />
+    <Content Include="Content\pic\back.png" />
+    <Content Include="Content\pic\banner.png" />
+    <Content Include="Content\pic\banner2.png" />
+    <Content Include="Content\pic\banner_line.png" />
+    <Content Include="Content\pic\bback.png" />
+    <Content Include="Content\pic\cyan.png" />
+    <Content Include="Content\pic\darkgrey.png" />
+    <Content Include="Content\pic\examples_line.png" />
+    <Content Include="Content\pic\examples_line_sh.png" />
+    <Content Include="Content\pic\grey.png" />
+    <Content Include="Content\pic\light.png" />
     <Content Include="Content\pic\lightbox\close_grey.png" />
     <Content Include="Content\pic\lightbox\lightbox-blank.gif" />
     <Content Include="Content\pic\lightbox\lightbox-ico-loading.gif" />
     <Content Include="Content\pic\lightbox\nextlabel.gif" />
     <Content Include="Content\pic\lightbox\prevlabel.gif" />
+    <Content Include="Content\pic\link_car.png" />
+    <Content Include="Content\pic\link_int.png" />
+    <Content Include="Content\pic\link_pic.png" />
+    <Content Include="Content\pic\ready_line.png" />
+    <Content Include="Content\pic\ready_line_sh.png" />
+    <Content Include="Content\pic\title_car.png" />
+    <Content Include="Content\pic\title_int.png" />
+    <Content Include="Content\pic\title_pic.png" />
     <Content Include="Content\simpleGal.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\t034\t034.gallery.css" />
@@ -542,12 +561,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="x64\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Admin\" />
