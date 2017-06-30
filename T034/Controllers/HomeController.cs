@@ -175,7 +175,8 @@ namespace T034.Controllers
                 break;
 
                 default:
-                    if(System.IO.File.Exists(Path.Combine(Server.MapPath("~/Content/images/works/"), file)))
+                    //для файлов из папки work добаляется пустой элемент в descrition, так как для пустого списка decription на view отображаются файлы из папки/Content/images/
+                    if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/Content/images/works/"), file)))
                         result.Add("");
                     break;
             }
