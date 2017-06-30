@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Web.Mvc;
 using T034.Tools.Auth;
 using T034.ViewModel.Strazi;
@@ -172,6 +173,11 @@ namespace T034.Controllers
                     result.Add("Размерность камней:  S12,  S14, S16");
                     //result.Add("Стоимость: 1 900руб");
                 break;
+
+                default:
+                    if(System.IO.File.Exists(Path.Combine(Server.MapPath("~/Content/images/works/"), file)))
+                        result.Add("");
+                    break;
             }
 
             return result;
