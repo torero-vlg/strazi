@@ -44,28 +44,45 @@
                $('#imgTitlePic').hide();
                $('#imgTitleInt').show();
                $('#imgTitleCar').hide();
+               $('#imgTitleTest').hide();
 
                $('#linkCar').show();
                $('#linkPic').show();
                $('#linkInt').hide();
+               $('#linkTest').show();
            }
            if (category == 'car') {
                $('#imgTitlePic').hide();
                $('#imgTitleInt').hide();
                $('#imgTitleCar').show();
-               
+               $('#imgTitleTest').hide();
+
                $('#linkCar').hide();
                $('#linkPic').show();
                $('#linkInt').show();
+               $('#linkTest').show();
            }
            if (category == 'picture') {
                $('#imgTitlePic').show();
                $('#imgTitleInt').hide();
                $('#imgTitleCar').hide();
+               $('#imgTitleTest').hide();
 
                $('#linkCar').show();
                $('#linkPic').hide();
                $('#linkInt').show();
+               $('#linkTest').show();
+           }
+           if (category == 'test') {
+               $('#imgTitleTest').show();
+               $('#imgTitlePic').hide();
+               $('#imgTitleInt').hide();
+               $('#imgTitleCar').hide();
+
+               $('#linkCar').show();
+               $('#linkTest').hide();
+               $('#linkInt').show();
+               $('#linkPic').show();
            }
        }
 </script>
@@ -76,6 +93,7 @@
         <img src="/Content/pic/title_pic.png" min-height="48px" max-width="100%" id="imgTitlePic">
         <img src="/Content/pic/title_int.png" min-height="48px" max-width="100%" id="imgTitleInt">
         <img src="/Content/pic/title_car.png" min-height="48px" max-width="100%" id="imgTitleCar">
+        <img src="/Content/pic/title_test.png" min-height="48px" max-width="100%" id="imgTitleTest">
     </div>
 </div>
 <div class="row">
@@ -115,14 +133,17 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-6 col-xs-6" id="linkCar">
+    <div class="col-md-4 col-xs-4" id="linkCar">
         <a href="#"><img src="/Content/pic/link_car.png" max-width="100%" min-height="48px" onclick="changeCategory('car');"></a>
     </div>
-    <div class="col-md-6 col-xs-6" id="linkPic">
+    <div class="col-md-4 col-xs-4" id="linkPic">
         <a href="#"><img src="/Content/pic/link_pic.png" max-width="100%" min-height="48px" onclick="changeCategory('picture');"></a>
     </div>
-    <div class="col-md-6 col-xs-6" id="linkInt">
+    <div class="col-md-4 col-xs-4" id="linkInt">
         <a href="#"><img src="/Content/pic/link_int.png" max-width="100%" min-height="48px" onclick="changeCategory('interior');"></a>
+    </div>
+    <div class="col-md-4 col-xs-4" id="linkTest">
+        <a href="#"><img src="/Content/pic/link_test.png" max-width="100%" min-height="48px" onclick="changeCategory('test');"></a>
     </div>
 </div>
 <div class="row">
